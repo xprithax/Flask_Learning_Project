@@ -25,9 +25,14 @@
     <h2 class="text-center mt-2 mb-4">
       Find Your Doctor
     </h2>
-    <p>Show doctors here</p>
     <div>
-    <button class="btn btn-primary btn-lg">Contact Us</button>
+      {% for d in doc %}
+        {% include 'doctor.html' %}
+      {% endfor %}
+    </div>
+    <div class="text-center">
+    <button class="btn btn-primary btn-sm">Contact Us</button>
+      <p class="mt-2 mb-2">Copyright 2024</p>
     </div>
   </body>
 </html>
