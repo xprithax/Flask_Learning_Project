@@ -16,8 +16,30 @@
   </head>
   <body>
     <div class="container">
+      {% include 'navbar.html' %}
     <h1 class="text-center mt-4 mb-4">FindMyDoc</h1>
     <img class="img-fluid" id="banner" src="https://145e60de-11ee-43f1-9323-7038e604fc91-00-2gs2601yue11b.pike.replit.dev/static/banner.jpg" height="320">
+      <h2 class="text-center mt-2 mb-4">Find Services</h2>
+      <div class="row g-2">
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="email" class="form-control is-invalid" id="floatingInputGroup2" value="Radiology, Opthalmology, Dentist.....">
+            <label for="floatingInputGrid">Services</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelectGrid">
+              <option selected>Location</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <label for="floatingSelectGrid">Search Location</label>
+          </div>
+        </div>
+      </div>
+      
     <h2 class="text-center mt-2 mb-4">About FindMyDoc</h2>
     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel purus auctor massa pulvinar rhoncus. Quisque sodales, justo dictum auctor sodales, risus libero gravida urna, in ultrices nulla elit volutpat purus. Suspendisse at erat vitae felis euismod auctor. Vestibulum nec nisi quis neque commodo blandit sit amet vitae magna. Vivamus id est justo. Nunc ultrices feugiat eros nec molestie. Mauris vel feugiat turpis. Maecenas commodo nibh eu volutpat semper. Proin mollis purus quis enim vulputate dictum.
 
