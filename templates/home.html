@@ -9,21 +9,53 @@
         height: 360px;
         object-fit: cover;
         width: 100%;
+        margin-bottom: 16px;
       }
+      .dropbtn {
+        background-color: #93a7b4;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: #93a7b4;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content a:hover {background-color: #ddd;}
+      .show {display:block;}
     </style>
     <title>Some website</title>
     
   </head>
   <body>
-    <div class="container">
-      {% include 'navbar.html' %}
-    <h1 class="text-center mt-4 mb-4">FindMyDoc</h1>
+    {% include 'navbar.html' %}
     <img class="img-fluid" id="banner" src="https://145e60de-11ee-43f1-9323-7038e604fc91-00-2gs2601yue11b.pike.replit.dev/static/banner.jpg" height="320">
+    <div class="container">
       <h2 class="text-center mt-2 mb-4">Find Services</h2>
       <div class="row g-2">
         <div class="col-md">
           <div class="form-floating">
-            <input type="email" class="form-control is-invalid" id="floatingInputGroup2" value="Radiology, Opthalmology, Dentist.....">
+            <input type="email" class="form-control" id="floatingInputGrid" value="Radiology, Opthalmology, Dentist.....">
             <label for="floatingInputGrid">Services</label>
           </div>
         </div>
@@ -39,11 +71,19 @@
           </div>
         </div>
       </div>
-      
-    <h2 class="text-center mt-2 mb-4">About FindMyDoc</h2>
+      <br>
+      <h2 class="text-center mt-2 mb-4">About FindMyDoc</h2>
+    <div class="row">
+      <div class="col-md-6">
+    
     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel purus auctor massa pulvinar rhoncus. Quisque sodales, justo dictum auctor sodales, risus libero gravida urna, in ultrices nulla elit volutpat purus. Suspendisse at erat vitae felis euismod auctor. Vestibulum nec nisi quis neque commodo blandit sit amet vitae magna. Vivamus id est justo. Nunc ultrices feugiat eros nec molestie. Mauris vel feugiat turpis. Maecenas commodo nibh eu volutpat semper. Proin mollis purus quis enim vulputate dictum.
 
     Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam vestibulum arcu in condimentum rutrum. Curabitur egestas tortor at quam fringilla hendrerit. Pellentesque lacus nisi, rutrum eu consequat quis, dictum eget magna. In elementum faucibus metus, id elementum arcu pharetra eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque molestie nisl ac nisl bibendum eleifend.</p>
+      </div>
+      <div class="d-none d-md-block col-6">
+<img src="static/doc.jpg" style="height:430px; object-fit:cover; width:700px; border-radius:12px;">
+      </div>
+    </div>
     <h2 class="text-center mt-2 mb-4">
       Find Your Doctor
     </h2>
@@ -52,9 +92,26 @@
         {% include 'doctor.html' %}
       {% endfor %}
     </div>
-    <div class="text-center">
-    <button class="btn btn-primary btn-sm">Contact Us</button>
-      <p class="mt-2 mb-2">Copyright 2024</p>
-    </div>
+      {% include 'footer.html' %}
+
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
   </body>
 </html>

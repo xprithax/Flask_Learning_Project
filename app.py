@@ -38,6 +38,10 @@ Doctors=[
 def hello():
   return render_template("home.html", doc=Doctors)
 
+@app.route("/finddoc")
+def finddoc():
+  return render_template("finddoc.html", doc=Doctors)
+
 @app.route("/api/doc")
 def doc_list():
   return jsonify(Doctors)
